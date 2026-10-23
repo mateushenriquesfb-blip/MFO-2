@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
   const host = req.headers["x-forwarded-host"] || req.headers.host;
   const payload = { handle: HANDLE, order_nsu: pedido, redirect_url: "https://" + host + "/?pago=1", items: linhas };
   try {
-    const r = await fetch("https://api.checkout.infinitepay.io/links", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+    const r = await fetch("https://api.infinitepay.io/invoices/public/checkout/links", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
     const j = await r.json().catch(() => ({}));
     const url = j.url || j.checkout_url;
     if (!r.ok || !url) return res.status(502).json({ erro: "A InfinitePay não devolveu o link", detalhe: j });
