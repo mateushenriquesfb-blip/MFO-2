@@ -1,0 +1,27 @@
+MFO COSMÉTICOS - SITE COM PAGAMENTO NO CARTÃO (VERCEL + INFINITEPAY)
+
+ANTES DE COMEÇAR
+1) No app InfinitePay: Vendas > Checkout > Configurações > Habilitar Checkout Integrado.
+   Se a opção não aparecer, peça a ativação pelo chat do app.
+2) Sua InfiniteTag já está em api/pagar.js (mateus-henri-).
+
+COMO PUBLICAR (pelo computador, com GitHub)
+1) Crie um repositório no GitHub (pode ser privado).
+2) Envie TODO o conteúdo desta pasta para a raiz do repositório:
+   index.html, vercel.json e a pasta api (com pagar.js). Commit.
+3) Entre em vercel.com com a conta do GitHub.
+4) "Add New" > "Project" > escolha o repositório > "Deploy".
+   Não precisa configurar nada: o Vercel detecta o index.html e a pasta api.
+5) Anote o endereço gerado (algo como nome.vercel.app).
+
+TESTE (obrigatório antes de divulgar)
+1) Abra o endereço, crie uma conta, coloque o produto mais barato no carrinho e escolha Cartão.
+2) Confira se abre a página da InfinitePay com o valor certo e pague você mesma.
+3) Confirme que o pagamento aparece no app InfinitePay e que o site volta com "Pedido recebido".
+Se aparecer "Não foi possível abrir o pagamento", veja o erro em Vercel > seu projeto > Logs / Functions.
+
+IMPORTANTE
+- Os preços ficam em api/pagar.js. Se mudar preço ou produto no site, mude também nesse arquivo.
+- Quem envia o pedido para você é o cliente. Confira sempre o pagamento no app InfinitePay.
+- Cupons e contas continuam salvos só no celular de cada cliente.
+- Nunca peça nem receba número de cartão por e-mail, Instagram ou WhatsApp.
